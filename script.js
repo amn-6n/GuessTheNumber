@@ -63,7 +63,6 @@ function cleanUpGuess(guess) {
 
 function displayMessage(message) {
   lowOrHi.innerHTML = `<h3>${message}</h3>`;
-  lowOrHi.style.bckgroundColor = "red";
 }
 
 function endGame() {
