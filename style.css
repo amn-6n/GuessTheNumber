@@ -238,6 +238,7 @@ a {
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
+  position: fixed;
 }
 
 @media screen and (width <= 745px) {
