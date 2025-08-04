@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+  position: relative;
+}
+
+/* Container Styling */
+
+#wrapper {
+  width: calc(450 / 16 * 1rem);
+  height: calc(600 / 16 * 1rem);
+  border-radius: 40px;
+  padding: 10px 20px;
+  display: grid;
+  text-align: center;
+  grid-template-rows: 20% 50% 30%;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+#wrapper > div {
+  display: grid;
+  place-items: center;
+}
+
+#wrapper > div > h1 {
+  font-size: calc(20 / 16 * 1rem);
+  border-bottom: 2px dashed black;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+  place-items: center;
+}
+
+#guess {
+  font-size: calc(32 / 16 * 1rem);
+  font-weight: bold;
+}
+
+/* Input Styling */
+
+.guessField {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  width: 15em;
+  height: 3.5em;
+  outline: none;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  transition: all 0.5s;
+  font-size: calc(18 / 16 * 1rem);
+  text-align: center;
+}
+
+.guessField:hover,
+.guessField:focus {
+  border: 2px solid #4a9dec;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+/* Button Styling */
+
+#subt {
+  height: 3em;
+  width: 8em;
+  border: none;
+  border-radius: 10em;
+  background: #016dd9;
+  font-size: 17px;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+#subt:hover {
+  animation: shake3856 0.3s linear infinite both;
+}
+
+@keyframes shake3856 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+.guesses {
+  background-color: rgb(203, 203, 175);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Reset Button  Styling */
+.reset-btn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: mediumspringgreen solid 0.15em;
+  border-radius: 0.25em;
+  color: mediumspringgreen;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+}
+
+.reset-btn h3 {
+  z-index: 1;
+}
+
+.reset-btn:hover {
+  color: #212121;
+}
+
+.reset-btn:active {
+  border-color: teal;
+}
+
+.reset-btn::after,
+.reset-btn::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: mediumspringgreen;
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms;
+}
+
+.reset-btn::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.reset-btn::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.reset-btn:hover:before {
+  transform: translateX(-1em);
+}
+
+.reset-btn:hover:after {
+  transform: translateX(1em);
+}
+
+.reset-btn:active:before,
+.reset-btn:active:after {
+  background: teal;
+}
+
+/* Footer Styling */
+
+a {
+  text-decoration: none;
+}
+
+.game-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #555;
+  font-size: calc(18 / 16 * 1rem);
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+@media screen and (width <= 745px) {
+  body {
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  html {
+    font-size: 14px;
+  }
+}
