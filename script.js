@@ -31,9 +31,9 @@ function validateGuess(guess) {
     alert("Please Enter a Valid Number");
   } else {
     prevGuess.push(guess);
-    if (numGuess === 11) {
+    if (numGuess === 7) {
       cleanUpGuess(guess);
-      displayMessage(`Game Over!!!<br> Random Value Was ${randomValue}`);
+      displayMessage(`<h3 style="color:red">Game Over!!!<br> Random Value Was ${randomValue}</h3>`);
       endGame();
     } else {
       cleanUpGuess(guess);
@@ -58,7 +58,7 @@ function cleanUpGuess(guess) {
   // guessSlot.innerHTML += `${guess}, `;
   guessSlot.innerHTML = prevGuess.join(", ");
   numGuess++;
-  remaining.innerHTML = `${Math.max(0, 11 - numGuess)}`;
+  remaining.innerHTML = `${Math.max(0, 7 - numGuess)}`;
 }
 
 function displayMessage(message) {
@@ -83,7 +83,7 @@ function restartGame() {
     prevGuess = [];
     numGuess = 1;
     guessSlot.innerHTML = ``;
-    remaining.innerHTML = `${11 - numGuess}`;
+    remaining.innerHTML = `${7 - numGuess}`;
     userInput.removeAttribute("disabled", "");
     submit.disabled = false;
     displayMessage("");
